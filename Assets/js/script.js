@@ -1,10 +1,7 @@
 $(document).ready(function () {
 
-    // On click of Search or city list
+    // On click make search of city
     $('#getEnteredCityWeather,#past-searches').on('click', function () {
-
-          // get location from user input if seearch event
-          // or get location from city history if click event from history list
         let clickEvent = $(event.target)[0];
         let location = "";
         if (clickEvent.id === "getEnteredCityWeather") {
@@ -81,14 +78,13 @@ $(document).ready(function () {
         }
         }
 
-      // Get current locaation weather
+      // Get weather from user's current location
     function getCurrentWeather(loc) {
         
-          // function to pull city history from local memory - citylist 
+          // function to pull city history from local memory
         let cityList = JSON.parse(localStorage.getItem("cityList")) || [];
-          // build div for each history location - link to HTML ID="past-searches"
+          // build div for each history location
         $('#past-searches').empty();
-          // calls for each row of the CityList array
         cityList.forEach ( function (city) {  
             let cityHistoryNameDiv = $('<div>');      
             cityHistoryNameDiv.addClass("cityList");         
@@ -220,12 +216,11 @@ $(document).ready(function () {
         var apiKey = "0705643b94243fe1abda1ba9766f538a";
         var openFcstWeatherAPI = currentURL + cityName + exclHrlURL + unitsURL + apiIdURL + apiKey;
 
-          // Open weather api... onecall request
+          // Open weather api
         $.ajax({
             url: openFcstWeatherAPI,
             method: "GET"
         }).then(function (response2) {
-            // load weatherObj from response... only a history of 5 days needed
             for (let i=1; i < (response2.daily.length-2); i++) {
             let cur = response2.daily[i]
             weatherObj = {
@@ -235,14 +230,12 @@ $(document).ready(function () {
                 maxTemp: Math.round(cur.temp.max),
                 humidity: cur.humidity,
                 uvi: cur.uvi,
-        
-                  // convert date to usable format [1] = MM/DD/YYYY Format
                 date: (convertDate(cur.dt))
             }
               // push day to weatherArr
             weatherArr.push(weatherObj);
             }
-            // render forecast on page
+            // renders forecast on page
             for (let i = 0; i < weatherArr.length; i++) {
             let $colmx1 = $('<div class="col mx-1">');
             let $cardBody = $('<div class="card-body forecast-card">');
@@ -258,14 +251,12 @@ $(document).ready(function () {
             let $tempMaxLi = $('<li>');
             let $tempMinLi = $('<li>');
             let $humLi = $('<li>');
-
               // format html values
             $iconI.attr('src', weatherArr[i].icon);
             $weathLi.text(weatherArr[i].weather);                
             $tempMaxLi.text('Temp High: ' + weatherArr[i].maxTemp + " °F");
             $tempMinLi.text('Temp Low: ' + weatherArr[i].minTemp + " °F");
             $humLi.text('Humidity: ' + weatherArr[i].humidity + "%");
-
               // append HTML
             $iconLi.append($iconI);
             $ul.append($iconLi);

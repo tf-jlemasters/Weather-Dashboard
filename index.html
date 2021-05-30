@@ -14,13 +14,11 @@
 </head>
 
 <body>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-dar bg-dark" id="header">
     <span class="navbar-brand mx-auto">Weather Dashboard</span>
 </nav>  
-<!-- Overall page contain -->
 <div class='container'>
     <div class='row'>
 
@@ -31,16 +29,13 @@
     <div class='card-body'>
             <label>Search For a City:</label>            
             <div class="input-group mb-3">
-            <!-- Input box with "Minneapolis" placeholder -->
-            <input id="cityEntered" type="text" class="form-control" placeholder="Minneapolis">
+            <input id="cityEntered" type="text" class="form-control" placeholder="Port Washington">
                 <div class="input-group-append">
-                <!-- search button using primary blue color -->
-                <button id='getEnteredCityWeather' class="btn btn-primary" type="submit">
+                <button id='getEnteredCityWeather' class="btn btn-secondary" type="submit">
                     <i id='getWeatherIcon' class="fas fa-search" aria-hidden="true"></i>
                 </button>
                 </div>
             </div>
-            <!-- Historyical Cities Formated Dynamically in Javascript -->
             <div id='past-searches'></div>
         </div>
         </div>
@@ -50,10 +45,8 @@
         <div class='row'>
         <div class='card'>
             <div class='card-body'>
-            <!-- City name loaded dynamically in javascript -->
             <h5 class='card-title' id='cityName'>City</h5>
             <ul>
-                <!-- Weather values loaded dynamically in javascript -->
                 <li><img id='currWeathIcn'></img></li>
                 <li class='card-text' id='currTemp'>Temp:</li>
                 <li class='card-text' id='currHum'>Humidity:</li>
@@ -63,12 +56,9 @@
             </div>
         </div>
     </div>
-    <!-- Five day history cards -->
     <div class='row'>
-        <!-- header for 5 day forecast -->
         <h5 class='card-title' id="fiveDayHeader">5-Day Forcast</h5>
     </div>
-    <!-- 5 day forecast loaded in Javascript -->
     <div class='row' id='forecast'></div>
     </div>
 </div>

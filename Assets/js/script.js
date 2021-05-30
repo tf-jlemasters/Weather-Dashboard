@@ -81,9 +81,9 @@ $(document).ready(function () {
       // Get weather from user's current location
     function getCurrentWeather(loc) {
         
-          // function to pull city history from local memory
+          // pull city history from local memory
         let cityList = JSON.parse(localStorage.getItem("cityList")) || [];
-          // build div for each history location
+          //div for each history location
         $('#past-searches').empty();
         cityList.forEach ( function (city) {  
             let cityHistoryNameDiv = $('<div>');      
@@ -123,7 +123,7 @@ $(document).ready(function () {
             humidity: response1.main.humidity,
             temp: Math.round(response1.main.temp),
         
-              // convert date to usable format [1] = MM/DD/YYYY Format
+            // convert date to usable format [1] = MM/DD/YYYY Format
             date: (convertDate(response1.dt)),
             icon: `http://openweathermap.org/img/w/${response1.weather[0].icon}.png`,
             desc: response1.weather[0].description
@@ -141,10 +141,9 @@ $(document).ready(function () {
             // render current city search wind speed
             $('#currWind').text("Windspeed: " + weatherObj.wind + " MPH");      
         
-          // get UVI from open weather using UVI Query and format UVI on current weather
-          // Since UVI request searches based upon lat/long, define city using lat/lon
+          // get UVI from open weather 
         city = `&lat=${parseInt(response1.coord.lat)}&lon=${parseInt(response1.coord.lon)}`;
-          // Initiate API Call to get current weather... use UVI request
+          // Initiate API Call to get current weather
         var uviURL = "https://api.openweathermap.org/data/2.5/uvi";
         var apiIdURL = "?appid="
         var apiKey = "0705643b94243fe1abda1ba9766f538a";

@@ -1,6 +1,6 @@
 
 #header {
-    color: white;
+    color: whitesmoke;
 }
 
 ul { 
@@ -39,7 +39,7 @@ li {
     border-radius: 5px;
     margin: 5px;
     padding-left: 2px;
-    background-color: lightgrey;
+    background-color: lightsteelblue;
 }
 
 .cityList:hover {

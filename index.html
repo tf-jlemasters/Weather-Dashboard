@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/efd9680f52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Assets\style.css">
+
+    <title>Tim's Weather Dashboard</title>
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dar bg-dark" id="header">
+    <span class="navbar-brand mx-auto">Weather Dashboard</span>
+</nav>  
+<!-- Overall page contain -->
+<div class='container'>
+    <div class='row'>
+
+    <div class='col-md-3'>
+
+        <div class='card search-section'>
+        
+    <div class='card-body'>
+            <label>Search For a City:</label>            
+            <div class="input-group mb-3">
+            <!-- Input box with "Minneapolis" placeholder -->
+            <input id="cityEntered" type="text" class="form-control" placeholder="Minneapolis">
+                <div class="input-group-append">
+                <!-- search button using primary blue color -->
+                <button id='getEnteredCityWeather' class="btn btn-primary" type="submit">
+                    <i id='getWeatherIcon' class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                </div>
+            </div>
+            <!-- Historyical Cities Formated Dynamically in Javascript -->
+            <div id='past-searches'></div>
+        </div>
+        </div>
+    </div>
+    
+    <div class='col-md-9 '>
+        <div class='row'>
+        <div class='card'>
+            <div class='card-body'>
+            <!-- City name loaded dynamically in javascript -->
+            <h5 class='card-title' id='cityName'>City</h5>
+            <ul>
+                <!-- Weather values loaded dynamically in javascript -->
+                <li><img id='currWeathIcn'></img></li>
+                <li class='card-text' id='currTemp'>Temp:</li>
+                <li class='card-text' id='currHum'>Humidity:</li>
+                <li class='card-text' id='currWind'>Windspeed:</li>
+                <li class='card-text' id='currUVI'>UV Index:</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Five day history cards -->
+    <div class='row'>
+        <!-- header for 5 day forecast -->
+        <h5 class='card-title' id="fiveDayHeader">5-Day Forcast</h5>
+    </div>
+    <!-- 5 day forecast loaded in Javascript -->
+    <div class='row' id='forecast'></div>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js'></script>
+<script src='Assets\js\script.js'></script>
+</body>
+</html>

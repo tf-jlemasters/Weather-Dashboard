@@ -2,7 +2,7 @@
 # **Server-Side APIs: Weather Dashboard**
 ## Description 
 This is a weather dashboard built using Javascript, HTML, and CSS.<br>
-You may use it to check the weather outlook for multiple cities, or just to find the weather for your city.
+You may use it to check the weather outlook for multiple cities, or just to find the weather for your city. This repository is forked from my original GitHub account.
 ## Table of contents
 - [Description](#Description)
 - [Installation](#Installation)
